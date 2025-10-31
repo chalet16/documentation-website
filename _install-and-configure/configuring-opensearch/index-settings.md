@@ -73,7 +73,7 @@ OpenSearch supports the following dynamic cluster-level index settings:
   - `hashed_prefix`: Stores the data in path structure `hash(<shard-data-idenitifer>)/<repository_base_path>/<index_uuid>/<shard_id>/`.
   - `hashed_infix`: Stores the data in path structure `<repository_base_path>/hash(<shard-data-idenitifer>)/<index_uuid>/<shard_id>/`.
   `shard-data-idenitifer` is characterized by the index_uuid, shard_id, kind of data (translog, segments), and type of data (data, metadata, lock_files).
-  Default is `fixed`.
+  Default is `hashed_prefix`.
 
 - `cluster.remote_store.index.path.hash_algorithm` (String): The hash function used to derive the hash value when `cluster.remote_store.index.path.type` is set to `hashed_prefix` or `hashed_infix`. This setting is effective only for remote-store-enabled clusters. This setting supports the following values:
   - `fnv_1a_base64`: Uses the FNV1a hash function and generates a url-safe 20-bit base64-encoded hash value.
